@@ -11,3 +11,11 @@ $(call inherit-product, vendor/lineage/config/tablet.mk)
 $(call inherit-product, vendor/lineage/config/telephony.mk)
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/foldable_book
+
+# MindTheGapps
+WITH_GMS ?= true
+GMS_TARGET_ARCH ?= arm64
+
+ifeq ($(WITH_GMS),true)
+include vendor/gapps/$(GMS_TARGET_ARCH)/$(GMS_TARGET_ARCH)-vendor.mk
+endif

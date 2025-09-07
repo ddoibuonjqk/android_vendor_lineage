@@ -14,13 +14,18 @@ PRODUCT_PACKAGES += \
     Profiles \
     Recorder \
     Seedvault \
+
+ifeq ($(WITH_GMS),false)
+PRODUCT_PACKAGES += \
     Twelve
+endif
 
 ifneq ($(PRODUCT_NO_CAMERA),true)
 PRODUCT_PACKAGES += \
     Aperture
 endif
 
+TARGET_EXCLUDES_AUDIOFX ?= true
 ifneq ($(TARGET_EXCLUDES_AUDIOFX),true)
 PRODUCT_PACKAGES += \
     AudioFX

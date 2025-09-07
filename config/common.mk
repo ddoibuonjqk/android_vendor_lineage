@@ -1,10 +1,3 @@
-# MindTheGapps
-WITH_GMS ?= true
-ifeq ($(WITH_GMS),true)
-GMS_TARGET_ARCH ?= arm64
-include vendor/gapps/$(GMS_TARGET_ARCH)/$(GMS_TARGET_ARCH)-vendor.mk
-endif
-
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
