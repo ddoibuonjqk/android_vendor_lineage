@@ -15,11 +15,9 @@ PRODUCT_PACKAGES += \
     Recorder \
     Seedvault \
 
-# PixelPlay music player
-TARGET_USES_PIXELPLAY ?= true
-ifeq ($(TARGET_USES_PIXELPLAY),true)
+ifeq ($(WITH_GMS),false)
 PRODUCT_PACKAGES += \
-    PixelPlay
+    Twelve
 endif
 
 ifneq ($(PRODUCT_NO_CAMERA),true)
