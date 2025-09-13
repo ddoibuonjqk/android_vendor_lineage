@@ -11,5 +11,5 @@ WITH_GMS ?= true
 GMS_TARGET_ARCH ?= arm64
 
 ifeq ($(WITH_GMS),true)
-include vendor/gapps/$(GMS_TARGET_ARCH)/$(GMS_TARGET_ARCH)-vendor.mk
+$(call inherit-product, vendor/gapps/$(GMS_TARGET_ARCH)/$(GMS_TARGET_ARCH)-vendor.mk)
 endif
